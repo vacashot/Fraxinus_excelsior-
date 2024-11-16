@@ -1,0 +1,93 @@
+################################################################################
+################################################################################
+#SCRIPT PARA EJECUTAR BIOCLIM
+################################################################################
+################################################################################
+rm(list = ls()) # Borramos todos los objetos que est?n creados
+
+# Cargar las librerías
+library(dismo)
+library(terra)
+library(adehabitatHS)
+library(sf)
+library(ggplot2)
+library(raster)
+################################################################################
+# Cambia esto por la ruta de tu directorio de trabajo
+getwd() # para saber en que directorio estoy trabajando
+setwd("C:/Users/vacas/Desktop/master geoinformatica/ASIGNATURAS/Modelizacion/FRESNO")  
+getwd() # para saber en que directorio estoy trabajando
+
+################################################################################
+################################################################################
+# 0. CARGAR DATOS PUNTOS DE FRESNO Y SHP DE MADRID
+################################################################################
+################################################################################
+# Definir el sistema de coordenadas
+epsg <- 'EPSG:4326'
+
+# Cargar el shapefile del madrid
+madrid_shp <- vect('vect/recintos_autonomicas_inspire_peninbal_etrs89.shp')
+
+# Cargar los datos desde un archivo CSV
+fresno <- read.csv("FRESNO_PUNTAZOS.csv")
+head(fresno)
+
+# Convertir los datos en un objeto espacial con coordenadas y sistema de referencia
+temp <- terra::vect(fresno, geom=c('X', 'Y'), crs='EPSG:4326')
+
+# Graficar el shapefile del mundo en color negro
+plot(madrid_shp, col='gray')
+
+# Graficar los puntos de 'data' (puntos de fresno) en color rojo sobre el mapa
+plot(temp, col='red', pch=19, cex=0.1, add=TRUE)
+################################################################################
+################################################################################
+#CARGAMOS VARIABLES A MISMA RESOLUCION
+################################################################################
+################################################################################
+# Cargar las variables climáticas (.asc)
+bio1 <- raster("RECORTES_MADRID/world_bio1_cropped.asc")
+bio2 <- raster("RECORTES_MADRID/world_bio2_cropped.asc")
+bio6 <- raster("RECORTES_MADRID/world_bio6_cropped.asc")
+bio12 <- raster("RECORTES_MADRID/world_bio12_cropped.asc")
+bio14 <- raster("RECORTES_MADRID/world_bio14_cropped.asc")
+bio16 <- raster("RECORTES_MADRID/world_bio16_cropped.asc")
+
+# Cargar las variables geográficas
+twi <- raster("RASTER_ALINEADOS/twi_aligned.asc")  # Índice TWI
+mdt <- raster("RASTER_ALINEADOS/mdt_aligned.asc")  # Modelo Digital de Terreno
+buffer_rivers <- raster("RASTER_ALINEADOS/buffer_river_aligned.asc")  # Buffer de ríos y masas de agua
+################################################################################
+################################################################################
+#BIOCLIM
+################################################################################
+################################################################################
+# Seleccionar archivos específicos de la lista
+var <- c(bio1, bio2, bio6, bio12, bio14, bio16, twi, mdt, buffer_rivers)
+var  # nos coge bio3, bio7, bio 11, bio 12
+# Crear un stack (apilamiento) de las variables seleccionadas(paquete de cuatro ficheros raster)
+stk <- stack(var)
+
+# Graficar el stack de variables
+plot(stk)
+
+###########   Modelo de distribución  ##########################################
+
+# Crear el modelo Bioclim utilizando el stack y las coordenadas de 'vulpes'
+bio <- bioclim(stk, fresno[c("X", "Y")]) #bio tiene la ecuación
+bio
+# Visualizar las relaciones de pares entre las variables del modelo
+pairs(bio)
+
+# Predecir la distribución usando el modelo Bioclim dentro de la extensión de Madrid
+p <- dismo::predict(bio, stk_mask, progress = 'text')
+
+# Predecir la distribución con el modelo Bioclim en una extensión definida (predimos en el resto)
+p <- dismo::predict(bio, stk, progress='text', ext=extent(-4.5, -3, 39.8, 41.2))  # predict {dismo}
+
+# Graficar el mapa de predicción de Bioclim
+plot(p, ext(-4.5, -3, 39.8, 41.2), main="predict BIOCLIM")
+# Graficar el shapefile sobre la predicción
+plot(p, main = "Predicción BIOCLIM - Comunidad de Madrid")
+plot(madrid_shp, add = TRUE, border = "red", lwd = 2)
