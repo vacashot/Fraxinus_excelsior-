@@ -1,0 +1,12 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>MDT_MADRID_SIN_HUCOS_ETRS89</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">2367.4899902344</MDI>
+      <MDI key="STATISTICS_MEAN">817.04149509887</MDI>
+      <MDI key="STATISTICS_MINIMUM">434.17001342773</MDI>
+      <MDI key="STATISTICS_STDDEV">293.22714339976</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">43.61</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
