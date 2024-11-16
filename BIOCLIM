@@ -1,6 +1,6 @@
 ################################################################################
 ################################################################################
-#SCRIPT PARA EJECUTAR BIOCLIM
+#SCRIPT PARA ALINEAR Y PONER MISMA RESOLUCION A VARIOS RASTER
 ################################################################################
 ################################################################################
 rm(list = ls()) # Borramos todos los objetos que est?n creados
@@ -79,9 +79,6 @@ bio <- bioclim(stk, fresno[c("X", "Y")]) #bio tiene la ecuación
 bio
 # Visualizar las relaciones de pares entre las variables del modelo
 pairs(bio)
-
-# Predecir la distribución usando el modelo Bioclim dentro de la extensión de Madrid
-p <- dismo::predict(bio, stk_mask, progress = 'text')
 
 # Predecir la distribución con el modelo Bioclim en una extensión definida (predimos en el resto)
 p <- dismo::predict(bio, stk, progress='text', ext=extent(-4.5, -3, 39.8, 41.2))  # predict {dismo}
