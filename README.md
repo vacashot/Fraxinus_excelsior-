@@ -1,1 +1,11 @@
+DESCRIPCIÓN El fresno común Fraxinus excelsior L. es árbol el más alto del género de los tres fresnos autóctonos. Se trata de un gran árbol, de hasta 40 m de altura, que se caracteriza por sus yemas marrón oscuro, casi negras. No obstante, existen ejemplares con caracteres intermedios que hacen difícil su separación específica. Las hojas son caducas, opuestas y compuestas, formadas por 7 a 13 hojuelas (folíolos) enfrentadas más una terminal (imparipinnadas), generalmente de 15-45 mm de ancho. Su margen es uniformemente serrado y carecen de pelos por ambas caras. La semilla, que es alargada, tiene un ala que le ayuda a su dispersión por el viento. A este tipo de fruto se le denomina sámara. El Fresno es un árbol de crecimiento rápido y una longevidad alta, pudiendo llegar a vivir hasta 150 añosQUE SE PUEDE CONFUNDIR CON OTRA ESPECIE DE FRESNO
+ECOLOGIA Especie acompañante de los bosques de hoja caduca húmedos, que ocupa vaguadas y montañas, aunque es menos ripario que Fraxinus angustifolia. Es indiferente al tipo de suelo y se cría desde el nivel del mar hasta los 1200 m aproximadamente (diferentes autores otras alturas..
+https://www.euforgen.org/fileadmin/templates/euforgen.org/upload/Publications/Technical_guidelines/Spanish_March2022/Fraxinus_excelsior_ES.pdf
+
+ Crece en gran parte de Europa y Asia, haciéndose más escaso hacia el sur. En la Península habita en el norte y se refugia en las montañas y zonas más húmedas y frescas a medida que descendemos en latitud.
+Flora iberica considera que en nuestro territorio se da la subsp. excelsior. Además incluye el fresno americano (Fraxinus pennsylvanica Marshall), originario del centro y este de Norteamérica y naturalizado en algunos puntos de la Península: Cáceres, Huelva, Jaén, Lérida, Navarra, Sevilla y Guipúzcoa. Las hojas son muy semejantes a las del fresno común, pero el rabillo de la hojuela final llega hasta los 32 mm, a diferencia del de Fraxinus excelsior, que apenas alcanza los 12 mm.
+Esta planta está incluida en los catálogos de flora protegida y amenazada de Castilla-La Mancha y Madrid.
+Fraxinus era el nombre que le daban los romanos a los fresnos y su madera; excelsior significa ‘que sobresale’, ‘más elevado’, por su mayor porte.
+ 
+https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/servicios/banco-datos-naturaleza/56Fresnedas_tcm30-138153.jpg
 HOLA MUNDO
