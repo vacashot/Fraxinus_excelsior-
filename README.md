@@ -32,17 +32,6 @@ Se utilizó el algoritmo BIOCLIM para identificar áreas favorables para el fres
    source("scripts/main_model.R")
    ```
 
-## **Instrucciones para añadir imágenes**
-1. Guarda las imágenes en la carpeta `images/` de tu repositorio.
-2. En el archivo Markdown, usa la siguiente sintaxis para insertar imágenes:  
-   ```markdown
-   ![Descripción de la imagen](images/nombre_imagen.png)
-   ```
-   Ejemplo:  
-   ```markdown
-   ![Mapa de distribución del Fresno](images/mapa_fresno.png)
-   ```
-
 ## **Referencias**
 - **GBIF.org**: [Descarga de ocurrencias](https://doi.org/10.15468/dl.rb9zb7).
 - **WorldClim**: [Datos bioclimáticos](https://worldclim.org).
