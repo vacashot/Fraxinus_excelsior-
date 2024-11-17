@@ -1,11 +1,48 @@
-DESCRIPCIÓN El fresno común Fraxinus excelsior L. es árbol el más alto del género de los tres fresnos autóctonos. Se trata de un gran árbol, de hasta 40 m de altura, que se caracteriza por sus yemas marrón oscuro, casi negras. No obstante, existen ejemplares con caracteres intermedios que hacen difícil su separación específica. Las hojas son caducas, opuestas y compuestas, formadas por 7 a 13 hojuelas (folíolos) enfrentadas más una terminal (imparipinnadas), generalmente de 15-45 mm de ancho. Su margen es uniformemente serrado y carecen de pelos por ambas caras. La semilla, que es alargada, tiene un ala que le ayuda a su dispersión por el viento. A este tipo de fruto se le denomina sámara. El Fresno es un árbol de crecimiento rápido y una longevidad alta, pudiendo llegar a vivir hasta 150 añosQUE SE PUEDE CONFUNDIR CON OTRA ESPECIE DE FRESNO
-ECOLOGIA Especie acompañante de los bosques de hoja caduca húmedos, que ocupa vaguadas y montañas, aunque es menos ripario que Fraxinus angustifolia. Es indiferente al tipo de suelo y se cría desde el nivel del mar hasta los 1200 m aproximadamente (diferentes autores otras alturas..
-https://www.euforgen.org/fileadmin/templates/euforgen.org/upload/Publications/Technical_guidelines/Spanish_March2022/Fraxinus_excelsior_ES.pdf
+ # **Modelización espacial del Fresno común en Madrid**
 
- Crece en gran parte de Europa y Asia, haciéndose más escaso hacia el sur. En la Península habita en el norte y se refugia en las montañas y zonas más húmedas y frescas a medida que descendemos en latitud.
-Flora iberica considera que en nuestro territorio se da la subsp. excelsior. Además incluye el fresno americano (Fraxinus pennsylvanica Marshall), originario del centro y este de Norteamérica y naturalizado en algunos puntos de la Península: Cáceres, Huelva, Jaén, Lérida, Navarra, Sevilla y Guipúzcoa. Las hojas son muy semejantes a las del fresno común, pero el rabillo de la hojuela final llega hasta los 32 mm, a diferencia del de Fraxinus excelsior, que apenas alcanza los 12 mm.
-Esta planta está incluida en los catálogos de flora protegida y amenazada de Castilla-La Mancha y Madrid.
-Fraxinus era el nombre que le daban los romanos a los fresnos y su madera; excelsior significa ‘que sobresale’, ‘más elevado’, por su mayor porte.
- 
-https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/servicios/banco-datos-naturaleza/56Fresnedas_tcm30-138153.jpg
-HOLA MUNDO
+Este proyecto analiza la distribución potencial del **Fraxinus excelsior L. subsp. excelsior** en la Comunidad de Madrid mediante el modelo BIOCLIM, integrando variables bioclimáticas y geográficas. El repositorio incluye los scripts, datos y resultados de este trabajo.
+
+## **Resumen**
+Se utilizó el algoritmo BIOCLIM para identificar áreas favorables para el fresno común en Madrid. Este análisis se realizó a partir de:
+- **Variables bioclimáticas**: Datos como temperatura media anual, rango de temperaturas y precipitaciones (obtenidos de WorldClim).
+- **Variables geográficas**: Índice Topográfico de Humedad (TWI), Modelo Digital de Elevación (MDT) y buffer de proximidad a ríos y masas de agua.
+
+### **Resultados**
+- Las áreas más favorables se concentran en el norte y noroeste de Madrid, en zonas húmedas y montañosas.
+- Limitaciones: La resolución de 1 km² de las variables climáticas afecta la capacidad para identificar microhábitats específicos.
+
+## **Estructura del proyecto**
+- **`scripts/`**: Scripts en R utilizados para modelizar.
+- **`data/`**: Datos bioclimáticos y geográficos procesados.
+- **`results/`**: Mapas y gráficos generados.
+
+## **Requisitos**
+- **Software**: R y librerías como `dismo`, `raster`, y `sp`.
+- **Datos adicionales**: Descargados de [WorldClim](https://worldclim.org) y [GBIF](https://doi.org/10.15468/dl.rb9zb7).
+
+## **Cómo ejecutar**
+1. Clona este repositorio:  
+   ```bash
+   git clone https://github.com/vacashot/Fraxinus_excelsior.git
+   cd Fraxinus_excelsior
+   ```
+2. Instala las dependencias en R.
+3. Ejecuta el script principal:  
+   ```R
+   source("scripts/main_model.R")
+   ```
+
+## **Instrucciones para añadir imágenes**
+1. Guarda las imágenes en la carpeta `images/` de tu repositorio.
+2. En el archivo Markdown, usa la siguiente sintaxis para insertar imágenes:  
+   ```markdown
+   ![Descripción de la imagen](images/nombre_imagen.png)
+   ```
+   Ejemplo:  
+   ```markdown
+   ![Mapa de distribución del Fresno](images/mapa_fresno.png)
+   ```
+
+## **Referencias**
+- **GBIF.org**: [Descarga de ocurrencias](https://doi.org/10.15468/dl.rb9zb7).
+- **WorldClim**: [Datos bioclimáticos](https://worldclim.org).
